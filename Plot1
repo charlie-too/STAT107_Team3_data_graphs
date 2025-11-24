@@ -1,4 +1,4 @@
-PLOT 1- Predicted Probability (Gold Theme)
+## PLOT 1- Predicted Probability (Gold Theme)
 library(ggplot2)
 library(dplyr)
 set.seed(0)
