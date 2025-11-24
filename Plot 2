@@ -1,0 +1,13 @@
+##PLOT 2 - Recession Risk Landscape (Blue→Yellow / Viridis)
+library(ggplot2)
+d_unemp <- seq(-1, 1, length.out=200)
+sp_ret <- seq(-15, 15, length.out=200)
+grid <- expand.grid(d_unemp=d_unemp, sp_ret=sp_ret)
+grid$prob <- 1/ (1 + exp(-(3*grid$d_unemp + 0.1*grid$sp_ret)))
+ggplot(grid, aes(x=d_unemp, y=sp_ret, fill=prob)) +
+geom_raster(interpolate=TRUE) +
+scale_fill_viridis_c(name="Prob.")+
+labs(title="Recession Risk Landscape (Logit Model)",
+x="Monthly change in unemployment (pp)",
+y="S&P 500 monthly return (%)") +
+theme_minimal(base_size=12)
