@@ -1,4 +1,4 @@
-##PLOT 2 - Recession Risk Landscape (Blue→Yellow / Viridis)
+## PLOT 2 - Recession Risk Landscape (Blue→Yellow / Viridis)
 library(ggplot2)
 d_unemp <- seq(-1, 1, length.out=200)
 sp_ret <- seq(-15, 15, length.out=200)
